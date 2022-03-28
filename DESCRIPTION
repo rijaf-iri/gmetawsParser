@@ -1,0 +1,17 @@
+Package: gmetawsParser
+Version: 1.0
+Title: Ghana Meteorological Agency (GMet) Automatic Weather Station (AWS) Data Parsing
+Description: Process data from GMet's AWS Networks: TAHMO and ADCON . It fetches the data from the networks database. The data are converted to a standard format used by GMet's AWS Data Tools (ADT).
+Author: Rija Faniriantsoa <rijaf@iri.columbia.edu>
+Maintainer: Rija Faniriantsoa <rijaf@iri.columbia.com>
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Date: 2022-03-14
+Imports: 
+    ssh,
+    DBI,
+    RPostgres,
+    RODBC,
+RoxygenNote: 7.1.1
