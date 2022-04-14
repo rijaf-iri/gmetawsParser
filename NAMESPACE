@@ -1,6 +1,9 @@
 
 export(process.adcon)
+export(process.tahmo0)
 export(process.tahmo)
+export(process.adcon_synop)
+export(process.adcon_aws)
 
 export(tahmoMetaUpdate)
 export(adconMetaUpdate)

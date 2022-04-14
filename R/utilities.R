@@ -1,4 +1,5 @@
 
+Sys.setenv(TZ = "Africa/Accra")
 .onLoad <- function(libname, pkgname){
     Sys.setenv(TZ = "Africa/Accra")
 }
@@ -102,7 +103,7 @@ connect.RODBC <- function(con_args){
 }
 
 connect.adcon <- function(dirAWS){
-    ff <- file.path(dirAWS, "AWS_DATA", "AUTH", "adt_adcon.con")
+    ff <- file.path(dirAWS, "AWS_DATA", "AUTH", "adcon.con")
     adcon <- readRDS(ff)
     conn <- connect.DBI(adcon$connection, RPostgres::Postgres())
     if(is.null(conn)){
@@ -114,3 +115,7 @@ connect.adcon <- function(dirAWS){
     return(conn)
 }
 
+tahmo.api <- function(dirAWS){
+    ff <- file.path(dirAWS, "AWS_DATA", "AUTH", "tahmo.api")
+   readRDS(ff)
+}

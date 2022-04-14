@@ -2,20 +2,13 @@
 % Please edit documentation in R/process_aws.R
 \name{process.tahmo}
 \alias{process.tahmo}
-\title{Process TAHMO data.}
+\title{Process TAHMO data from API.}
 \usage{
-process.tahmo(dirFTP, dirAWS, dirUP = NULL, upload = TRUE)
+process.tahmo(dirAWS)
 }
 \arguments{
-\item{dirFTP}{full path to the directory containing the Tahmo data.\cr}
-
-\item{dirAWS}{full path to the directory containing the AWS_DATA folder on Tahmo server.\cr}
-
-\item{dirUP}{full path to the directory containing the AWS_DATA folder on ADT server.
-Default NULL, must be provided if \code{upload} is \code{TRUE}.\cr}
-
-\item{upload}{logical, if TRUE the data will be uploaded to ADT server.}
+\item{dirAWS}{full path to the directory containing the AWS_DATA folder on ADT server.\cr}
 }
 \description{
-Get the data from TAHMO database, parse and insert into ADT database.
+Get the data from TAHMO API, parse and insert into ADT database.
 }

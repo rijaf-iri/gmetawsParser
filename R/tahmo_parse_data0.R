@@ -1,5 +1,5 @@
 
-parse.tahmo.data <- function(qres, awsID, varTable){
+parse.tahmo.data0 <- function(qres, awsID, varTable){
     tz <- Sys.getenv("TZ")
 
     temps <- strptime(qres$time, "%Y-%m-%dT%H:%M:%SZ", tz = tz)
@@ -13,7 +13,6 @@ parse.tahmo.data <- function(qres, awsID, varTable){
     tmp <- qres[ivar, , drop = FALSE]
     tmp$time <- as.POSIXct(temps[ivar])
     tmp <- tmp[!is.na(tmp$value), , drop = FALSE]
-    tmp$value <- as.numeric(tmp$value)
 
     if(nrow(tmp) == 0) return(NULL)
 
@@ -43,8 +42,6 @@ parse.tahmo.data <- function(qres, awsID, varTable){
     tmp$raw_value <- tmp$value
 
     ###### limit check
-
-    tmp$value[tmp$quality != "1"] <- NA
 
     tmp$min_val[is.na(tmp$min_val)] <- -Inf
     tmp$max_val[is.na(tmp$max_val)] <- Inf
