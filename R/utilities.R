@@ -112,6 +112,7 @@ connect.adcon <- function(dirAWS){
         if(is.null(conn)) return(NULL)
     }
 
+    DBI::dbExecute(conn, "SET default_transaction_read_only=on")
     return(conn)
 }
 
