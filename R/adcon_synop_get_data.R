@@ -6,7 +6,7 @@ get.adcon.data_synop <- function(conn, dirAWS, dirUP = NULL, upload = TRUE){
     tz <- Sys.getenv("TZ")
     origin <- "1970-01-01"
 
-    awsFile <- file.path(dirAWS, "AWS_DATA", "CSV", "adcon_db_aws_synop_list.csv")
+    awsFile <- file.path(dirAWS, "AWS_DATA", "CSV", "adcon_db_synop_aws_list.csv")
     varFile <- file.path(dirAWS, "AWS_DATA", "CSV", "adcon_db_synop_parameters_table.csv")
     # dirOUT <- file.path(dirAWS, "AWS_DATA", "DATA0", "ADCON_SYNOP")
     dirOUT <- file.path(dirAWS, "AWS_DATA", "DATA", "ADCON_SYNOP")
